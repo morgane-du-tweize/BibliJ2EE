@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { 
 				"", "/bibliotheque"
 		})
+
 public class Bibliotheque extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,13 +28,20 @@ public class Bibliotheque extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * par defaut donc enlever
+		 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		*/
+		
 		request.setAttribute("livres", getLivres());
 		this.getServletContext().getRequestDispatcher("/jsps/bibliotheque.jsp").forward(request, response);
 		for (Livre unLivre : getLivres()) {

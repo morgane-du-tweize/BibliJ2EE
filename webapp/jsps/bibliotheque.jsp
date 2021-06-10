@@ -11,34 +11,31 @@
 	</head>
 	<body>
 	
-	<% ArrayList<Livre> livres = (ArrayList<Livre>) request.getAttribute("livres"); %>
-	
+
 		<h1>Bienvenue dans ma bibliotheque</h1>
 	
+	<!--   encqadrement du tableau   -->
 		<table>
+		
+			<!--  ligne d'en tête  -->
 			<tr>
 				<th>Référence</th>
 				<th>Titre</th>
 				<th>Auteur</th>
 			</tr>
 			
+			<!--  (for Livre unLivre : livres){    -->
+			<% for (Livre unLivre : (ArrayList<Livre>) request.getAttribute("livres")) {   %>
 			<tr>
-				<td>00001</td>
-				<td>Carrie au al du diable</td>
-				<td>Stephen King</td>
+			<!-- le egal signifie va afficher versus code avec point virgule "va cherher"      -->
+				<td><%= unLivre.getReference() %></td>
+				<td><%= unLivre.getAuteur() %></td>
+				<td><%= unLivre.getTitre() %></td>
+
 			</tr>
-	
-			<tr>
-				<td>00002</td>
-				<td>Ring</td>
-				<td>Koji Suzuki</td>
-			</tr>
-		
-			<tr>
-				<td>00003</td>
-				<td>Chtulhu</td>
-				<td>H P Lovecraft</td>
-			</tr>
+				
+		<%	}  %>
+			
 		</table>
 		
 		<form method="POST" action="#">
@@ -57,6 +54,8 @@
 				<label for="auteur">Auteur</label>
 				<input type="auteur" id="auteur" name="auteur">
 			</div>
+			
+			<div><input type="submit"></div>
 		</form>	
 	
 	</body>
