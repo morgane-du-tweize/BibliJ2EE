@@ -25,8 +25,9 @@
 			<tr>
 
 				<td><%= unLivre.getReference() %></td>
-				<td><%= unLivre.getAuteur() %></td>
 				<td><%= unLivre.getTitre() %></td>
+				<td><%= unLivre.getAuteur() %></td>
+				
 
 			</tr>
 				
