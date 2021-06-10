@@ -10,24 +10,20 @@
 		<title>Ma bibliotheque</title>
 	</head>
 	<body>
-	
 
 		<h1>Bienvenue dans ma bibliotheque</h1>
 	
-	<!--   encqadrement du tableau   -->
 		<table>
 		
-			<!--  ligne d'en tête  -->
 			<tr>
 				<th>Référence</th>
 				<th>Titre</th>
 				<th>Auteur</th>
 			</tr>
 			
-			<!--  (for Livre unLivre : livres){    -->
 			<% for (Livre unLivre : (ArrayList<Livre>) request.getAttribute("livres")) {   %>
 			<tr>
-			<!-- le egal signifie va afficher versus code avec point virgule "va cherher"      -->
+
 				<td><%= unLivre.getReference() %></td>
 				<td><%= unLivre.getAuteur() %></td>
 				<td><%= unLivre.getTitre() %></td>
