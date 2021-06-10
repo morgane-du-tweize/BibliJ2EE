@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Bibliotheque
- */
 @WebServlet(
 		name = "bibliotheque", 
 		urlPatterns = { 
@@ -35,18 +32,10 @@ public class Bibliotheque extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		/*
-		 * par defaut donc enlever
-		 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		*/
-		
+
 		request.setAttribute("livres", getLivres());
 		this.getServletContext().getRequestDispatcher("/jsps/bibliotheque.jsp").forward(request, response);
-		for (Livre unLivre : getLivres()) {
-			System.out.println(unLivre.toString());
-		}
+
 	}
 
 	/**
@@ -57,7 +46,6 @@ public class Bibliotheque extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	// pondre des livres
 	private ArrayList<Livre> getLivres(){
  
 		ArrayList<Livre> livres = new ArrayList<Livre>();
